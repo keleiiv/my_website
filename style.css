@@ -168,26 +168,32 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Project Cards */
+/* --- Project Cards (Vertical Grid) --- */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    /* This automatically arranges cards: 1 col on mobile, 2-3 cols on desktop */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
+    padding-bottom: 20px;
 }
 
 .project-card {
     border: 4px solid var(--border-color);
     padding: 15px;
-    background: var(--card-bg); /* UPDATED */
+    background: var(--card-bg);
     transition: transform 0.2s;
     display: flex;
     flex-direction: column;
+    /* Ensure uniform height */
+    height: 100%; 
 }
 
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 0 var(--secondary);
 }
+
+/* Remove the specific scrollbar styling for the grid since the whole page scrolls now */
 
 .project-img-placeholder {
     width: 100%;
