@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keleiiv's space</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <!-- Link to Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="scanlines"></div>
+
+    <div class="pixel-box">
+        <!-- Title Bar -->
+        <div class="title-bar pixel-font text-xs md:text-sm">
+            <div class="flex items-center gap-2">
+                <i class="ph-fill ph-brain text-lg"></i>
+                <span>NEURAL_OS.exe</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span id="clock" class="hidden sm:block">00:00:00</span>
+                <button id="themeToggle" class="hover:text-pink-300"><i class="ph-fill ph-moon text-lg"></i></button>
+                <div class="flex gap-1">
+                    <div class="w-3 h-3 bg-red-400 border border-white"></div>
+                    <div class="w-3 h-3 bg-yellow-400 border border-white"></div>
+                    <div class="w-3 h-3 bg-green-400 border border-white"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Sidebar -->
+            <div class="sidebar hidden md:flex">
+                <!-- Avatar Container -->
+                <div class="avatar-container">
+                    <!-- Replace the div below with an <img> tag when ready -->
+                    <!-- <img src="your-photo.jpg" class="w-full h-full object-cover"> -->
+                    <img src="profile.jpeg" class="w-full h-full object-cover">
+                </div>
+                
+                <div class="text-center mb-2">
+                    <h2 class="pixel-font text-xs mb-1">PLAYER 1</h2>
+                    <p class="text-sm opacity-60">Lvl. 1 ML Eng</p>
+                </div>
+
+                <!-- Nav -->
+                <nav class="w-full flex flex-col mt-2">
+                    <button class="nav-btn active" onclick="switchTab('home')">
+                        <i class="ph-fill ph-house"></i> BASE
+                    </button>
+                    <button class="nav-btn" onclick="switchTab('projects')">
+                        <i class="ph-fill ph-code"></i> MODELS
+                    </button>
+                    <button class="nav-btn" onclick="switchTab('skills')">
+                        <i class="ph-fill ph-chart-bar"></i> STATS
+                    </button>
+                    <button class="nav-btn" onclick="switchTab('contact')">
+                        <i class="ph-fill ph-envelope"></i> COMMS
+                    </button>
+                </nav>
+                
+                <div class="mt-auto text-center opacity-40 text-xs">
+                    © 2025 Keleiiv
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-view">
+                
+                <!-- HOME TAB -->
+                <div id="home" class="tab-content active">
+                    <h1 class="pixel-font text-2xl md:text-3xl mb-6 leading-relaxed">
+                        HELLO WORLD! <br>
+                        I'M <span style="color: var(--accent)">ARYA_PATIL</span>
+                    </h1>
+                    
+                    <!-- Typewriter Box (Dark Mode Safe) -->
+                    <div class="pixel-panel">
+                        <span id="typewriter" class="text-xl"></span><span class="cursor-blink">|</span>
+                    </div>
+
+                    <h2 class="pixel-font text-sm mb-4 text-[var(--secondary)]">LATEST TRAINING RUN</h2>
+                    
+                    <!-- Featured Quest (Dynamic Link) -->
+                    <div class="featured-card group cursor-pointer hover:translate-y-[-4px] transition-transform" onclick="switchTab('projects')">
+                        <div class="hidden sm:flex h-24 w-24 bg-[var(--secondary)] border-2 border-[var(--border-color)] items-center justify-center flex-shrink-0 text-white">
+                             <i class="ph-fill ph-brain text-4xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="pixel-font text-sm">PREDICTIVE ENGINE</h3>
+                                <span class="text-xs bg-red-100 text-red-500 border border-red-200 px-1 font-bold">98% ACC</span>
+                            </div>
+                            <p class="text-sm mb-2 opacity-80">A stock market prediction model using LSTMs and historical data.</p>
+                            <div class="flex gap-2">
+                                <span class="tag bg-yellow-100">Python</span>
+                                <span class="tag bg-blue-100">PyTorch</span>
+                            </div>
+                        </div>
+                        <div class="text-[var(--accent)] text-2xl group-hover:translate-x-2 transition-transform">
+                            <i class="ph-bold ph-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECTS TAB -->
+                <div id="projects" class="tab-content">
+                    <h2 class="pixel-font text-xl mb-6 border-b-4 border-[var(--border-color)] pb-2 inline-block">MODEL REPO</h2>
+                    <div class="project-grid">
+                        <!-- Project 1 -->
+                        <div class="project-card">
+                            <div class="project-img-placeholder">
+                                <i class="ph-fill ph-eye text-4xl"></i>
+                            </div>
+                            <h3 class="pixel-font text-xs mb-2">Computer Vision</h3>
+                            <p class="text-sm mb-4 flex-1">Object detection system for autonomous vehicles.</p>
+                            <div class="flex gap-2 mb-4">
+                                <span class="tag bg-orange-100">YOLO</span>
+                                <span class="tag bg-blue-100">OpenCV</span>
+                            </div>
+                            <button class="pixel-btn w-full">VIEW DEMO</button>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="project-card">
+                            <div class="project-img-placeholder" style="background: var(--accent)">
+                                <i class="ph-fill ph-chats text-4xl"></i>
+                            </div>
+                            <h3 class="pixel-font text-xs mb-2">NLP Chatbot</h3>
+                            <p class="text-sm mb-4 flex-1">Sentiment analysis & customer support bot.</p>
+                            <div class="flex gap-2 mb-4">
+                                <span class="tag bg-green-100">Transformers</span>
+                                <span class="tag bg-gray-100">NLTK</span>
+                            </div>
+                            <button class="pixel-btn w-full">VIEW REPO</button>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="project-card">
+                            <div class="project-img-placeholder" style="background: #4ade80">
+                                <i class="ph-fill ph-database text-4xl"></i>
+                            </div>
+                            <h3 class="pixel-font text-xs mb-2">Data Viz Dashboard</h3>
+                            <p class="text-sm mb-4 flex-1">Interactive visualization for big data sets.</p>
+                            <div class="flex gap-2 mb-4">
+                                <span class="tag bg-purple-100">D3.js</span>
+                                <span class="tag bg-red-100">Pandas</span>
+                            </div>
+                            <button class="pixel-btn w-full">EXPLORE</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STATS TAB -->
+                <div id="skills" class="tab-content">
+                    <h2 class="pixel-font text-xl mb-6 border-b-4 border-[var(--border-color)] pb-2 inline-block">ENGINEER STATS</h2>
+                    
+                    <!-- Using pixel-panel class ensures background changes in dark mode -->
+                    <div class="pixel-panel">
+                        <div class="flex justify-between items-end mb-6 border-b-2 border-dashed border-gray-300 pb-4">
+                            <div class="pixel-font text-sm text-[var(--secondary)]">CLASS: AI/ML & Data Science</div>
+                            <div class="pixel-font text-xs">EPOCHS: 5,000</div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Stats -->
+                            <div>
+                                <div class="flex justify-between mb-1 pixel-font text-xs">
+                                    <span>PYTHON / PYTORCH</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="stat-bar-container">
+                                    <div class="stat-fill" style="width: 0%" data-width="95%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-1 pixel-font text-xs">
+                                    <span>SQL / DATABASES</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="stat-bar-container">
+                                    <div class="stat-fill" style="width: 0%" data-width="85%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-1 pixel-font text-xs">
+                                    <span>MATH / STATISTICS</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="stat-bar-container">
+                                    <div class="stat-fill" style="width: 0%" data-width="90%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Buffs Grid -->
+                        <div class="mt-8 grid grid-cols-3 gap-2 text-center text-xs">
+                            <div class="p-2 border border-[var(--border-color)]" style="background: rgba(255,255,255,0.05)">
+                                <i class="ph-fill ph-cpu text-2xl block mb-1 text-blue-500"></i>
+                                GPU ACCEL
+                            </div>
+                            <div class="p-2 border border-[var(--border-color)]" style="background: rgba(255,255,255,0.05)">
+                                <i class="ph-fill ph-coffee text-2xl block mb-1 text-brown-500"></i>
+                                CAFFEINE
+                            </div>
+                            <div class="p-2 border border-[var(--border-color)]" style="background: rgba(255,255,255,0.05)">
+                                <i class="ph-fill ph-git-branch text-2xl block mb-1 text-orange-500"></i>
+                                GIT
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMMS TAB -->
+                <div id="contact" class="tab-content">
+                <h2 class="pixel-font text-xl mb-6 border-b-4 border-[var(--border-color)] pb-2 inline-block">OPEN CHANNEL</h2>
+                    
+                <!-- PASTE YOUR FORMSPREE LINK IN THE ACTION FIELD BELOW -->
+                <form action="https://formspree.io/f/xwpzyryl" method="POST" class="max-w-md mx-auto pixel-panel">
+                        
+                        <div class="mb-4">
+                            <label class="block pixel-font text-xs mb-2">SOURCE ID (Email)</label>
+                            <!-- Added name="email" and required -->
+                            <input type="email" name="email" class="pixel-input" placeholder="recruiter@tech.com" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block pixel-font text-xs mb-2">PAYLOAD (Message)</label>
+                            <!-- Added name="message" and required -->
+                            <textarea name="message" class="pixel-input h-32" placeholder="Initiating handshake..." required></textarea>
+                        </div>
+
+                        <button class="pixel-btn w-full py-4 text-sm hover:scale-105 transform transition shadow-[4px_4px_0_var(--border-color)]">
+                            <i class="ph-bold ph-paper-plane-right mr-2"></i> TRANSMIT
+                        </button>
+                    </form>
+                </div>
+                    <!-- Social Icons -->
+                    <div class="mt-10 flex justify-center gap-6 border-t-2 border-dashed border-gray-300 pt-6">
+    
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/arya-patil-11aug" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-[var(--border-color)] hover:bg-blue-100 transition shadow-[4px_4px_0_rgba(0,0,0,0.1)] hover:translate-y-[-2px]">
+                        <i class="ph-fill ph-linkedin-logo text-xl"></i>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/keleiiv" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-[var(--border-color)] hover:bg-gray-100 transition shadow-[4px_4px_0_rgba(0,0,0,0.1)] hover:translate-y-[-2px]">
+                        <i class="ph-fill ph-github-logo text-xl"></i>
+                    </a>
+
+                    <!-- Website / Portfolio / Twitter -->
+                    <a href="https://keleiiv.github.io/my_website/" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-[var(--border-color)] hover:bg-blue-200 transition shadow-[4px_4px_0_rgba(0,0,0,0.1)] hover:translate-y-[-2px]">
+                        <i class="ph-fill ph-globe text-xl"></i>
+                    </a>
+
+                </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- Mobile Nav -->
+        <div class="mobile-nav md:hidden border-t-4 border-[var(--border-color)] bg-white flex justify-around p-2">
+            <button class="p-2 text-2xl" onclick="switchTab('home')"><i class="ph-fill ph-house"></i></button>
+            <button class="p-2 text-2xl" onclick="switchTab('projects')"><i class="ph-fill ph-code"></i></button>
+            <button class="p-2 text-2xl" onclick="switchTab('skills')"><i class="ph-fill ph-chart-bar"></i></button>
+            <button class="p-2 text-2xl" onclick="switchTab('contact')"><i class="ph-fill ph-envelope"></i></button>
+        </div>
+
+    </div>
+
+    <!-- Link to Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
