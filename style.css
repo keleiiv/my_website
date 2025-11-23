@@ -304,3 +304,32 @@ body.dark-mode .pixel-input:focus {
 
 .cursor-blink { animation: blink 1s infinite; }
 @keyframes blink { 50% { opacity: 0; } }
+/* --- Floating Particles (Sparkles) --- */
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    pointer-events: none; /* Mouse clicks go through them */
+    animation: floatAway 1s forwards;
+    z-index: 9999; /* Make sure they float above everything */
+}
+
+@keyframes floatAway {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-50px) rotate(180deg); opacity: 0; }
+}/* --- Floating Particles (Sparkles) --- */
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    pointer-events: none; /* Mouse clicks go through them */
+    animation: floatAway 1s forwards;
+    z-index: 9999; /* Make sure they float above everything */
+}
+
+@keyframes floatAway {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-50px) rotate(180deg); opacity: 0; }
+}

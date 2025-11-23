@@ -76,7 +76,32 @@ if(themeBtn) {
         }
     });
 }
+// --- 6. Mouse Sparkles (Particle Effect) ---
+document.addEventListener('mousemove', function(e) {
+    // Only create sparkles 15% of the time to keep the site fast
+    if (Math.random() > 0.85) { 
+        createSparkle(e.clientX, e.clientY);
+    }
+});
 
+function createSparkle(x, y) {
+    const sparkle = document.createElement('div');
+    sparkle.classList.add('particle');
+    
+    // Randomize color: Pink, Purple, or White
+    const colors = ['var(--accent)', 'var(--secondary)', '#fff'];
+    sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    
+    sparkle.style.left = x + 'px';
+    sparkle.style.top = y + 'px';
+    
+    document.body.appendChild(sparkle);
+    
+    // Remove the sparkle after 1 second so the DOM doesn't get clogged
+    setTimeout(() => {
+        sparkle.remove();
+    }, 1000);
+}
 // --- Initialize ---
 window.onload = function() {
     typeWriter();
