@@ -41,8 +41,6 @@
             <div class="sidebar hidden md:flex">
                 <!-- Avatar Container -->
                 <div class="avatar-container">
-                    <!-- Replace the div below with an <img> tag when ready -->
-                    <!-- <img src="your-photo.jpg" class="w-full h-full object-cover"> -->
                     <img src="profile.jpeg" class="w-full h-full object-cover">
                 </div>
                 
@@ -82,14 +80,12 @@
                         I'M <span style="color: var(--accent)">ARYA_PATIL</span>
                     </h1>
                     
-                    <!-- Typewriter Box (Dark Mode Safe) -->
                     <div class="pixel-panel">
                         <span id="typewriter" class="text-xl"></span><span class="cursor-blink">|</span>
                     </div>
 
                     <h2 class="pixel-font text-sm mb-4 text-[var(--secondary)]">LATEST TRAINING RUN</h2>
                     
-                    <!-- Featured Quest (Dynamic Link) -->
                     <div class="featured-card group cursor-pointer hover:translate-y-[-4px] transition-transform" onclick="switchTab('projects')">
                         <div class="hidden sm:flex h-24 w-24 bg-[var(--secondary)] border-2 border-[var(--border-color)] items-center justify-center flex-shrink-0 text-white">
                              <i class="ph-fill ph-brain text-4xl"></i>
@@ -115,7 +111,6 @@
                 <div id="projects" class="tab-content">
                     <h2 class="pixel-font text-xl mb-6 border-b-4 border-[var(--border-color)] pb-2 inline-block">MODEL REPO</h2>
                     <div class="project-grid">
-                        <!-- Project 1 -->
                         <div class="project-card">
                             <div class="project-img-placeholder">
                                 <i class="ph-fill ph-eye text-4xl"></i>
@@ -129,7 +124,6 @@
                             <button class="pixel-btn w-full">VIEW DEMO</button>
                         </div>
 
-                        <!-- Project 2 -->
                         <div class="project-card">
                             <div class="project-img-placeholder" style="background: var(--accent)">
                                 <i class="ph-fill ph-chats text-4xl"></i>
@@ -143,7 +137,6 @@
                             <button class="pixel-btn w-full">VIEW REPO</button>
                         </div>
 
-                        <!-- Project 3 -->
                         <div class="project-card">
                             <div class="project-img-placeholder" style="background: #4ade80">
                                 <i class="ph-fill ph-database text-4xl"></i>
@@ -163,7 +156,6 @@
                 <div id="skills" class="tab-content">
                     <h2 class="pixel-font text-xl mb-6 border-b-4 border-[var(--border-color)] pb-2 inline-block">ENGINEER STATS</h2>
                     
-                    <!-- Using pixel-panel class ensures background changes in dark mode -->
                     <div class="pixel-panel">
                         <div class="flex justify-between items-end mb-6 border-b-2 border-dashed border-gray-300 pb-4">
                             <div class="pixel-font text-sm text-[var(--secondary)]">CLASS: AI/ML & Data Science</div>
@@ -171,7 +163,6 @@
                         </div>
 
                         <div class="space-y-6">
-                            <!-- Stats -->
                             <div>
                                 <div class="flex justify-between mb-1 pixel-font text-xs">
                                     <span>PYTHON / PYTORCH</span>
@@ -203,7 +194,6 @@
                             </div>
                         </div>
 
-                        <!-- Buffs Grid -->
                         <div class="mt-8 grid grid-cols-3 gap-2 text-center text-xs">
                             <div class="p-2 border border-[var(--border-color)]" style="background: rgba(255,255,255,0.05)">
                                 <i class="ph-fill ph-cpu text-2xl block mb-1 text-blue-500"></i>
@@ -223,20 +213,16 @@
 
                 <!-- COMMS TAB -->
                 <div id="contact" class="tab-content">
-                <h2 class="pixel-font text-xl mb-6 border-b-4 border-[var(--border-color)] pb-2 inline-block">OPEN CHANNEL</h2>
+                    <h2 class="pixel-font text-xl mb-6 border-b-4 border-[var(--border-color)] pb-2 inline-block">OPEN CHANNEL</h2>
                     
-                <!-- PASTE YOUR FORMSPREE LINK IN THE ACTION FIELD BELOW -->
-                <form action="https://formspree.io/f/xwpzyryl" method="POST" class="max-w-md mx-auto pixel-panel">
-                        
+                    <form action="https://formspree.io/f/xwpzyryl" method="POST" class="max-w-md mx-auto pixel-panel">
                         <div class="mb-4">
                             <label class="block pixel-font text-xs mb-2">SOURCE ID (Email)</label>
-                            <!-- Added name="email" and required -->
                             <input type="email" name="email" class="pixel-input" placeholder="recruiter@tech.com" required>
                         </div>
                         
                         <div class="mb-4">
                             <label class="block pixel-font text-xs mb-2">PAYLOAD (Message)</label>
-                            <!-- Added name="message" and required -->
                             <textarea name="message" class="pixel-input h-32" placeholder="Initiating handshake..." required></textarea>
                         </div>
 
@@ -244,27 +230,25 @@
                             <i class="ph-bold ph-paper-plane-right mr-2"></i> TRANSMIT
                         </button>
                     </form>
-                </div>
-                    <!-- Social Icons -->
+
+                    <!-- Social Icons (NOW INSIDE THE CONTACT TAB) -->
                     <div class="mt-10 flex justify-center gap-6 border-t-2 border-dashed border-gray-300 pt-6">
-    
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/arya-patil-11aug" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-[var(--border-color)] hover:bg-blue-100 transition shadow-[4px_4px_0_rgba(0,0,0,0.1)] hover:translate-y-[-2px]">
-                        <i class="ph-fill ph-linkedin-logo text-xl"></i>
-                    </a>
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/arya-patil-11aug" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-[var(--border-color)] hover:bg-blue-100 transition shadow-[4px_4px_0_rgba(0,0,0,0.1)] hover:translate-y-[-2px]">
+                            <i class="ph-fill ph-linkedin-logo text-xl"></i>
+                        </a>
 
-                    <!-- GitHub -->
-                    <a href="https://github.com/keleiiv" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-[var(--border-color)] hover:bg-gray-100 transition shadow-[4px_4px_0_rgba(0,0,0,0.1)] hover:translate-y-[-2px]">
-                        <i class="ph-fill ph-github-logo text-xl"></i>
-                    </a>
+                        <!-- GitHub -->
+                        <a href="https://github.com/keleiiv" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-[var(--border-color)] hover:bg-gray-100 transition shadow-[4px_4px_0_rgba(0,0,0,0.1)] hover:translate-y-[-2px]">
+                            <i class="ph-fill ph-github-logo text-xl"></i>
+                        </a>
 
-                    <!-- Website / Portfolio / Twitter -->
-                    <a href="https://keleiiv.github.io/my_website/" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-[var(--border-color)] hover:bg-blue-200 transition shadow-[4px_4px_0_rgba(0,0,0,0.1)] hover:translate-y-[-2px]">
-                        <i class="ph-fill ph-globe text-xl"></i>
-                    </a>
-
-                </div>
-                </div>
+                        <!-- Website -->
+                        <a href="https://keleiiv.github.io/my_website/" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-[var(--border-color)] hover:bg-blue-200 transition shadow-[4px_4px_0_rgba(0,0,0,0.1)] hover:translate-y-[-2px]">
+                            <i class="ph-fill ph-globe text-xl"></i>
+                        </a>
+                    </div>
+                </div> <!-- END CONTACT TAB -->
 
             </div>
         </div>
